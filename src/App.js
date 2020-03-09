@@ -44,16 +44,15 @@ class App extends Component {
         <main>
           {this.state.isLoading && <p>Fetching items...</p>}
 
-          {this.state.isFriday &&
-            !this.state.isLoading && (
-              <div className={css(styles.friday)}>
-                <h2 className={css(styles.fridayTitle)}>Today is Friday</h2>
-                <strong className={css(styles.fridaySubtitle)}>
-                  Complete your timesheet
-                </strong>
-                <Item {...this.state.fridayPrio} prio={true} />
-              </div>
-            )}
+          {this.state.isFriday && !this.state.isLoading && (
+            <div className={css(styles.friday)}>
+              <h2 className={css(styles.fridayTitle)}>Today is Friday</h2>
+              <strong className={css(styles.fridaySubtitle)}>
+                Complete your timesheet
+              </strong>
+              <Item {...this.state.fridayPrio} prio={true} />
+            </div>
+          )}
           <ul className={css(styles.itemList)}>
             {!this.state.isLoading &&
               this.state.data.map((item, i) => {
